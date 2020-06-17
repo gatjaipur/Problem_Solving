@@ -5,25 +5,19 @@ using namespace std;
 void addOne(int arr[], int n) {
 	
 	
-	int carry = 0;
 	arr[n-1] += 1;
 	
-	if(arr[n-1] == 10) {
-		arr[n-1] = 0;
-		carry = 1;
-	}
+	int carry = arr[n-1]/10; 
+    arr[n-1] = arr[n-1] % 10; 
 	
 	for(int i = n-2; i >=0; i--) {
 		
 		if(carry == 1) {
 			arr[i] +=1;	
-			carry = 0;		
-		}
-	    if(arr[i] == 10) {
-		arr[i] = 0;
-		carry = 1;
+			carry = arr[i]/10; 
+           arr[i] = arr[i] % 10; 
 	}
-	}
+}
 	
 	vector<int> res;
 	

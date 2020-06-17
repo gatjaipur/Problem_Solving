@@ -201,6 +201,9 @@ for (int i = 1; i <= 5; i++)
     } 
     cout<<"\n"; 
 }
+
+
+
 }
 
 int main() {
@@ -251,3 +254,25 @@ int main() {
 	
 	return 0;
 }
+
+/*
+
+// Pascal Triange
+vector<vector<int> > Solution::solve(int A) {
+   vector<vector<int>> v(A);
+    
+    for(auto i=0; i<A; i++)
+    {
+        v[i].resize(i+1);
+        
+        v[i][0] = v[i][i] = 1;
+        
+        for(auto j=0; j<i; j++)
+        {
+            v[i][j] = v[i-1][j-1] + v[i-1][j];
+        }
+    }
+    
+    return v;
+}
+*/
