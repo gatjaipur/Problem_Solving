@@ -92,7 +92,7 @@ int checkFreq(long int n)
 
 int main()
 {
-	long int n = 256;
+	long int n = 255556;
 	int res = checkFreq(n);
 	if(res == -1)
 	{

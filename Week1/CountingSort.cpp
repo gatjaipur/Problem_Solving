@@ -39,13 +39,21 @@ void countSort(char arr[], int n)
 int main()
 {
 	char arr[]= {'c', 'a' , 'g', 'z', 'v', 'n'};
-	int n = sizeof(arr)/sizeof(arr[0]);  // if char arr[] = "I am Gaurav" then n = strlen(arr)
+	int n = sizeof(arr)/sizeof(arr[0]); 
 
 	countSort(arr, n);
-	
 	for(int i =0; i< n; i++ )
 	{
 		cout << arr[i] << " ";
+	}
+	char arr2[] = "I am Gaurav";
+
+	int n2 = strlen(arr2);
+	countSort(arr2, n2);
+
+	for(int i =0; i< n2; i++ )
+	{
+		cout << arr2[i] << " ";
 	}
 	return 0;
 }
