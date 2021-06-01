@@ -65,7 +65,7 @@
 // };
 
 
-//Method 2
+//Method 2 C++
 // Complexity Analysis
 
 // Time complexity : O(n), in length nn of the string.
@@ -77,7 +77,8 @@
 // When we compare the original and the reversed strings.
 // Each iteration runs linear in time (since each character operation completes in constant time). Thus, the effective run-time complexity is linear.
 
-// Space complexity : O(n), in length nn of the string. We need O(n) additional space to stored the filtered string and the reversed string.
+// Space complexity : O(n), in length n of the string. We need O(n) additional space to stored the filtered string and the reversed string.
+
 // class Solution {
 //  public:
 //   bool isPalindrome(string s) {
@@ -96,8 +97,52 @@
 //   }
 // };
 
+//Method 2 Java
 
-//Method 3 Two Pointers
+// class Solution {
+//   public boolean isPalindrome(String s) {
+//     StringBuilder builder = new StringBuilder();
+
+//     for (char ch : s.toCharArray()) {
+//       if (Character.isLetterOrDigit(ch)) {
+//         builder.append(Character.toLowerCase(ch));
+//       }
+//     }
+
+//     String filteredString = builder.toString();
+//     String reversedString = builder.reverse().toString();
+
+//     return filteredString.equals(reversedString);
+//   }
+
+//   /** An alternate solution using Java 8 Streams */
+//   public boolean isPalindromeUsingStreams(String s) {
+//     StringBuilder builder = new StringBuilder();
+
+//     s.chars()
+//         .filter(c -> Character.isLetterOrDigit(c))
+//         .mapToObj(c -> Character.toLowerCase((char) c))
+//         .forEach(builder::append);
+
+//     return builder.toString().equals(builder.reverse().toString());
+//   }
+// }
+
+//Method 2 Python
+
+// class Solution:
+//     def isPalindrome(self, s: str) -> bool:
+
+//         filtered_chars = filter(lambda ch: ch.isalnum(), s)
+//         lowercase_filtered_chars = map(lambda ch: ch.lower(), filtered_chars)
+
+//         filtered_chars_list = list(lowercase_filtered_chars)
+//         reversed_chars_list = filtered_chars_list[::-1]
+
+//         return filtered_chars_list == reversed_chars_list
+
+
+//Method 3 Two Pointers C++
 
 // Time complexity : O(n), in length nn of the string. We traverse over each character at-most once, until the two pointers meet in the middle, or when we break and return early.
 
@@ -119,3 +164,45 @@ class Solution {
     return true;
   }
 };
+
+//Method 3 Two Pointers Java
+
+class Solution {
+  public boolean isPalindrome(String s) {
+    for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+      while (i < j && !Character.isLetterOrDigit(s.charAt(i))) {
+        i++;
+      }
+      while (i < j && !Character.isLetterOrDigit(s.charAt(j))) {
+        j--;
+      }
+
+      if (Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j)))
+        return false;
+    }
+
+    return true;
+  }
+}
+
+
+//Method 3 Two Pointers Python
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+
+        i, j = 0, len(s) - 1
+
+        while i < j:
+            while i < j and not s[i].isalnum():
+                i += 1
+            while i < j and not s[j].isalnum():
+                j -= 1
+
+            if s[i].lower() != s[j].lower():
+                return False
+
+            i += 1
+            j -= 1
+
+        return True
