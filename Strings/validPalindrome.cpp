@@ -1,7 +1,5 @@
 // Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
- 
-
 // Example 1:
 
 // Input: s = "A man, a plan, a canal: Panama"
@@ -29,26 +27,26 @@
 //         return ( (c >= 'a' && c <= 'z') || ( c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') );
 //     }
     
-    // string reverse(string s) {
-    //     int n = s.length();
+//     string reverse(string s) {
+//         int n = s.length();
         
-    //     int begin = 0;
-    //     int end = n -1;
+//         int begin = 0;
+//         int end = n -1;
         
-    //     while(begin < end){
-    //         char temp = s[begin];
-    //         s[begin] = s[end];
-    //         s[end] = temp;
-    //         begin++;
-    //         end--;
-    //     }
+//         while(begin < end){
+//             char temp = s[begin];
+//             s[begin] = s[end];
+//             s[end] = temp;
+//             begin++;
+//             end--;
+//         }
         
-    //     return s;
-    // }
+//         return s;
+//     }
     
-    // bool isPal(string s) {
-    //     return (s.compare(reverse(s)) == 0);
-    // }
+//     bool isPal(string s) {
+//         return (s.compare(reverse(s)) == 0);
+//     }
     
 //     bool isPalindrome(string s) {
 //         std::transform(s.begin(), s.end(), s.begin(), ::tolower);
@@ -93,15 +91,15 @@ class Solution {
 
 
 
-//input is string s
-//output is whether a palindrome or not
+// input is string s
+// output is whether a palindrome or not
 
-//Approach 1
+// Approach 1
 // reverse a string and check whether its equal
 
-//Approach 2 
+// Approach 2 
 // two pointer approach, check equal chars until n/2
-//O(n), O(1)
+// O(n), O(1)
 
 bool checkIfPalindrome(string s) {
     int left = 0;
